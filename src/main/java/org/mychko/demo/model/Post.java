@@ -1,5 +1,6 @@
 package org.mychko.demo.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -13,9 +14,22 @@ public class Post {
 
     private String title;
     private String anons;
+    @Column(name="CONTENT", length=1024)
     private String fullText;
     private int views;
 
+    public Post() {
+    }
+
+    public Post(String title, String anons, String fullText) {
+        this.title = title;
+        this.anons = anons;
+        this.fullText = fullText;
+    }
+
+    public Long getId() {
+        return id;
+    }
 
     public String getAnons() {
         return anons;
