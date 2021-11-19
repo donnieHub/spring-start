@@ -12,9 +12,11 @@ public class Post {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @Column(name="CONTENT1", length=1024)
     private String title;
+    @Column(name="CONTENT2", length=1024)
     private String anons;
-    @Column(name="CONTENT", length=1024)
+    @Column(name="CONTENT3", length=1024)
     private String fullText;
     private int views;
 

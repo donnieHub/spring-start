@@ -17,9 +17,11 @@
     <div class="alert aler-info mt-2">
         <h3 th:text="${post.title}"></h3>
         <p th:text="${post.fullText}"></p>
-        <p th:text="${post.views}"></p>
-        <a th:href="'/blog/' + ${post.id} + '/edit'" class="btn btn-warning">Редактировать</a>
-        <a th:href="'/blog/' + ${post.id} + '/remove'" class="btn btn-warning">Удалить</a>
+        <p class="fw-bold"> Просмотры <span th:text="${post.views}"></span></p>
+        <a th:href="'/blog/' + ${post.id} + '/edit'" class="btn btn-warning">Редактировать</a><br>
+        <form th:action="'/blog/' + ${post.id} + '/remove'" method="post">
+            <button class="btn btn-warning" type="submit">Удалить</button>
+        </form>
     </div>
 </div>
 
